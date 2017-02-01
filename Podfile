@@ -10,7 +10,8 @@ target 'MySounds' do
   pod 'AudioKit', '~> 3.5'
   pod 'AWSCore'
   pod 'AWSS3'
-  
+  pod 'DZNEmptyDataSet'
+  pod 'RealmSwift'
   target 'MySoundsUITests' do
     inherit! :search_paths
     # Pods for testing

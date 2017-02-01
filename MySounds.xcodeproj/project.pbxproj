@@ -13,6 +13,8 @@
 		C326EFB81E41AA6C008C88E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C326EFB71E41AA6C008C88E7 /* Assets.xcassets */; };
 		C326EFBB1E41AA6C008C88E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C326EFB91E41AA6C008C88E7 /* LaunchScreen.storyboard */; };
 		C326EFC61E41AA6C008C88E7 /* MySoundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326EFC51E41AA6C008C88E7 /* MySoundsUITests.swift */; };
+		C326EFD51E41B722008C88E7 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326EFD41E41B722008C88E7 /* RecordViewController.swift */; };
+		C326EFD71E41C1CE008C88E7 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C326EFD61E41C1CE008C88E7 /* RecordCell.swift */; };
 		CC1D4ED064DD34B6699625CA /* Pods_MySounds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19ED10B83A36072D8FB90F35 /* Pods_MySounds.framework */; };
 		FB1D8DF33D54F7B42F4034B9 /* Pods_MySoundsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A49577F735207932ADD67D2 /* Pods_MySoundsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,8 @@
 		C326EFC11E41AA6C008C88E7 /* MySoundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySoundsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C326EFC51E41AA6C008C88E7 /* MySoundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySoundsUITests.swift; sourceTree = "<group>"; };
 		C326EFC71E41AA6C008C88E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C326EFD41E41B722008C88E7 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		C326EFD61E41C1CE008C88E7 /* RecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		D4269B408A41B365A3B1F552 /* Pods-MySoundsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySoundsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySoundsUITests/Pods-MySoundsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E40D826109EBD1A21E7DE177 /* Pods-MySoundsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySoundsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySoundsUITests/Pods-MySoundsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,12 +113,10 @@
 		C326EFAF1E41AA6C008C88E7 /* MySounds */ = {
 			isa = PBXGroup;
 			children = (
-				C326EFB01E41AA6C008C88E7 /* AppDelegate.swift */,
-				C326EFB21E41AA6C008C88E7 /* ViewController.swift */,
-				C326EFB41E41AA6C008C88E7 /* Main.storyboard */,
-				C326EFB71E41AA6C008C88E7 /* Assets.xcassets */,
-				C326EFB91E41AA6C008C88E7 /* LaunchScreen.storyboard */,
-				C326EFBC1E41AA6C008C88E7 /* Info.plist */,
+				C326EFD31E41B235008C88E7 /* Supporting Files */,
+				C326EFD21E41B22E008C88E7 /* Controllers */,
+				C326EFD11E41B227008C88E7 /* Views */,
+				C326EFD01E41B21F008C88E7 /* Models */,
 			);
 			path = MySounds;
 			sourceTree = "<group>";
@@ -126,6 +128,42 @@
 				C326EFC71E41AA6C008C88E7 /* Info.plist */,
 			);
 			path = MySoundsUITests;
+			sourceTree = "<group>";
+		};
+		C326EFD01E41B21F008C88E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C326EFD11E41B227008C88E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C326EFB41E41AA6C008C88E7 /* Main.storyboard */,
+				C326EFB71E41AA6C008C88E7 /* Assets.xcassets */,
+				C326EFB91E41AA6C008C88E7 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C326EFD21E41B22E008C88E7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C326EFB21E41AA6C008C88E7 /* ViewController.swift */,
+				C326EFB01E41AA6C008C88E7 /* AppDelegate.swift */,
+				C326EFD41E41B722008C88E7 /* RecordViewController.swift */,
+				C326EFD61E41C1CE008C88E7 /* RecordCell.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C326EFD31E41B235008C88E7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C326EFBC1E41AA6C008C88E7 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C326EFD51E41B722008C88E7 /* RecordViewController.swift in Sources */,
 				C326EFB31E41AA6C008C88E7 /* ViewController.swift in Sources */,
+				C326EFD71E41C1CE008C88E7 /* RecordCell.swift in Sources */,
 				C326EFB11E41AA6C008C88E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,6 +585,7 @@
 				C326EFCC1E41AA6C008C88E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C326EFCD1E41AA6C008C88E7 /* Build configuration list for PBXNativeTarget "MySoundsUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +594,7 @@
 				C326EFCF1E41AA6C008C88E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
