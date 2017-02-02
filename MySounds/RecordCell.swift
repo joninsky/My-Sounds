@@ -14,6 +14,7 @@ protocol RecordCellInteraction {
 
 class RecordCell: UITableViewCell {
 
+    @IBOutlet weak var name: UILabel!
     
     @IBOutlet weak var upload: UIButton!
     
@@ -21,13 +22,15 @@ class RecordCell: UITableViewCell {
     
     @IBOutlet weak var play: UIButton!
     
+    @IBOutlet weak var progress: UIProgressView!
+    
     var path: IndexPath?
     
     var delegate: RecordCellInteraction?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.progress.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

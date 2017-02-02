@@ -44,3 +44,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    static func quickAlert(_ title: String, _ message: String?) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+
+        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (theAction) in
+            
+            
+        }
+        
+        alert.addAction(ok)
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.window?.rootViewController?.present(alert, animated: true, completion: { 
+            
+            
+            
+        })
+        
+    }
+}

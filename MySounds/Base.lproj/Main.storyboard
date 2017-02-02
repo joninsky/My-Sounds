@@ -55,52 +55,70 @@
                                     <outletCollection property="gestureRecognizers" destination="nfT-0a-akS" appends="YES" id="CZ5-SX-evb"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ux-WU-jU2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ux-WU-jU2">
                                 <rect key="frame" x="0.0" y="83" width="375" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordingCell" rowHeight="83" id="RN6-TE-nfj" customClass="RecordCell" customModule="MySounds" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecordingCell" rowHeight="122" id="RN6-TE-nfj" customClass="RecordCell" customModule="MySounds" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RN6-TE-nfj" id="FLu-bM-P2s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fv4-Zd-jyi">
-                                                    <rect key="frame" x="8" y="16.5" width="50" height="50"/>
+                                                    <rect key="frame" x="8" y="8" width="50" height="50"/>
                                                     <state key="normal" image="Upload"/>
                                                     <connections>
                                                         <action selector="uploadPressed:" destination="RN6-TE-nfj" eventType="touchUpInside" id="4Yx-if-Sps"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OU-mY-dBU">
-                                                    <rect key="frame" x="317" y="16.5" width="50" height="50"/>
+                                                    <rect key="frame" x="317" y="8" width="50" height="50"/>
                                                     <state key="normal" image="Play"/>
                                                     <connections>
                                                         <action selector="playPressed:" destination="RN6-TE-nfj" eventType="touchUpInside" id="wA8-pa-MeK"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOE-VF-SCv">
-                                                    <rect key="frame" x="66" y="8" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOE-VF-SCv">
+                                                    <rect key="frame" x="8" y="66" width="359" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WMd-bG-hcs">
+                                                    <rect key="frame" x="66" y="56" width="243" height="2"/>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0l-Tj-XeS">
+                                                    <rect key="frame" x="166" y="23" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8OU-mY-dBU" firstAttribute="trailing" secondItem="FLu-bM-P2s" secondAttribute="trailingMargin" id="1PR-rX-pIl"/>
-                                                <constraint firstItem="8OU-mY-dBU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NOE-VF-SCv" secondAttribute="trailing" constant="8" id="EC8-z2-oye"/>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="NOE-VF-SCv" secondAttribute="bottom" id="EiR-Ha-c6c"/>
-                                                <constraint firstItem="8OU-mY-dBU" firstAttribute="centerY" secondItem="FLu-bM-P2s" secondAttribute="centerY" id="FQk-4s-o9D"/>
-                                                <constraint firstItem="NOE-VF-SCv" firstAttribute="top" secondItem="FLu-bM-P2s" secondAttribute="topMargin" id="GG4-3w-o9o"/>
-                                                <constraint firstItem="fv4-Zd-jyi" firstAttribute="centerY" secondItem="FLu-bM-P2s" secondAttribute="centerY" id="GW9-o5-1Cg"/>
-                                                <constraint firstItem="NOE-VF-SCv" firstAttribute="leading" secondItem="fv4-Zd-jyi" secondAttribute="trailing" constant="8" id="Ps8-ii-hZu"/>
-                                                <constraint firstItem="fv4-Zd-jyi" firstAttribute="leading" secondItem="FLu-bM-P2s" secondAttribute="leadingMargin" id="sqS-f1-Bxh"/>
+                                                <constraint firstItem="W0l-Tj-XeS" firstAttribute="centerX" secondItem="FLu-bM-P2s" secondAttribute="centerX" id="18M-SK-ULf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NOE-VF-SCv" secondAttribute="trailing" id="5ip-Eb-Eco"/>
+                                                <constraint firstItem="fv4-Zd-jyi" firstAttribute="trailing" secondItem="WMd-bG-hcs" secondAttribute="leading" constant="-8" id="9qQ-JL-Anj"/>
+                                                <constraint firstItem="WMd-bG-hcs" firstAttribute="trailing" secondItem="8OU-mY-dBU" secondAttribute="leading" constant="-8" id="KX5-uI-SJy"/>
+                                                <constraint firstItem="8OU-mY-dBU" firstAttribute="trailing" secondItem="FLu-bM-P2s" secondAttribute="trailingMargin" id="KoM-9G-wWd"/>
+                                                <constraint firstItem="8OU-mY-dBU" firstAttribute="top" secondItem="FLu-bM-P2s" secondAttribute="topMargin" id="NHL-YA-3ZN"/>
+                                                <constraint firstItem="8OU-mY-dBU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W0l-Tj-XeS" secondAttribute="trailing" id="QYr-3l-jEC"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="NOE-VF-SCv" secondAttribute="bottom" id="SwE-Tl-mPW"/>
+                                                <constraint firstItem="NOE-VF-SCv" firstAttribute="leading" secondItem="FLu-bM-P2s" secondAttribute="leadingMargin" id="VVY-6s-Pg0"/>
+                                                <constraint firstItem="fv4-Zd-jyi" firstAttribute="top" secondItem="FLu-bM-P2s" secondAttribute="topMargin" id="WU0-vN-zdY"/>
+                                                <constraint firstItem="fv4-Zd-jyi" firstAttribute="leading" secondItem="FLu-bM-P2s" secondAttribute="leadingMargin" id="aHp-Ex-PZj"/>
+                                                <constraint firstItem="W0l-Tj-XeS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fv4-Zd-jyi" secondAttribute="trailing" id="bD6-i8-yhQ"/>
+                                                <constraint firstItem="NOE-VF-SCv" firstAttribute="top" secondItem="fv4-Zd-jyi" secondAttribute="bottom" constant="8" id="clD-cE-2wV"/>
+                                                <constraint firstItem="W0l-Tj-XeS" firstAttribute="centerY" secondItem="fv4-Zd-jyi" secondAttribute="centerY" id="kX2-bW-Qhn"/>
+                                                <constraint firstItem="WMd-bG-hcs" firstAttribute="bottom" secondItem="fv4-Zd-jyi" secondAttribute="bottom" id="sYQ-n9-W4b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="info" destination="NOE-VF-SCv" id="72t-Q4-6lr"/>
+                                            <outlet property="name" destination="W0l-Tj-XeS" id="ei8-V2-KB2"/>
                                             <outlet property="play" destination="8OU-mY-dBU" id="Xw8-a1-oxX"/>
+                                            <outlet property="progress" destination="WMd-bG-hcs" id="hAT-U2-Ku5"/>
                                             <outlet property="upload" destination="fv4-Zd-jyi" id="4v6-A9-pot"/>
                                         </connections>
                                     </tableViewCell>
