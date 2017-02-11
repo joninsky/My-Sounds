@@ -31,7 +31,14 @@ class RecordViewController: UIViewController {
     let mic = AKMicrophone()
     var recorder: AVAudioRecorder?
     let session = AVAudioSession.sharedInstance()
-    let recordSettings: [String: Any] = [AVSampleRateKey: 12000, AVFormatIDKey: Int(kAudioFormatMPEG4AAC), AVNumberOfChannelsKey: 1, AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
+    //Decision to use specific codec, sample rate, and chanel.
+    //https://books.google.com/books?id=JoAhBQAAQBAJ&pg=PA43&lpg=PA43&dq=initialize+recorded+with+kAudioFormatiLBC&source=bl&ots=aOlz-SCwQ9&sig=ERSRcBQA6k9qzWDh05rO5g9oJmE&hl=en&sa=X&ved=0ahUKEwjb9cGtnPPRAhUPyGMKHdVtCm0Q6AEIJzAC#v=onepage&q=kAudioFormatMPEG4AAC&f=false
+    //Different Codecs
+    //https://developer.apple.com/library/content/documentation/MusicAudio/Conceptual/CoreAudioOverview/CoreAudioEssentials/CoreAudioEssentials.html#//apple_ref/doc/uid/TP40003577-CH10-SW7
+    //Differenct codec Keys
+    //https://developer.apple.com/reference/coreaudio/core_audio_data_types/1572096-audio_data_format_identifiers
+    
+    let recordSettings: [String: Any] = [AVSampleRateKey: 16000, AVFormatIDKey: kAudioFormatMPEG4AAC, AVNumberOfChannelsKey: 1, AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue]
     var player: AVAudioPlayer?
     
     //MARK: Lifecycle
@@ -278,7 +285,7 @@ extension RecordViewController: RecordCellInteraction {
         cell?.progress.progress = 0.0
         let uploadManager = S3Controller()
         
-        uploadManager.uploadSound(theRecording: recording, completion: { (error) in
+        uploadManager?.uploadSound(theRecording: recording, completion: { (error) in
             if let e = error {
                 switch e {
                 case .badUploadRequest:

@@ -12,6 +12,9 @@ target 'MySounds' do
   pod 'AWSS3'
   pod 'DZNEmptyDataSet'
   pod 'RealmSwift'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  
   target 'MySoundsUITests' do
     inherit! :search_paths
     # Pods for testing

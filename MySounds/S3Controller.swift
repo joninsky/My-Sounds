@@ -30,9 +30,15 @@ class S3Controller {
     
     let mainThread = DispatchQueue.main
     
-    
+    let uniqueDeviceID: String
     //MARK: Init
-    init() {
+    init?() {
+        
+        guard let ID = UIDevice.current.identifierForVendor?.uuidString else {
+            return nil
+        }
+        
+        self.uniqueDeviceID = ID
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType: AWSRegionType.USWest2, identityPoolId: self.poolID)
         
@@ -59,7 +65,7 @@ class S3Controller {
             return
         }
         
-        uploadRequest.key = fileName
+        uploadRequest.key = "\(self.uniqueDeviceID)_\(fileName)"
         
         guard let url = recording.localURL else {
             completion(UploadError.noLocalFile)
@@ -75,7 +81,7 @@ class S3Controller {
                 }
             }else if let _ = theTask.result as? AWSS3TransferManagerUploadOutput {
                 
-                guard let remoteURL = URL(string: "https://s3-us-west-2.amazonaws.com/audiobucketfunsounds")?.appendingPathComponent(fileName) else {
+                guard let remoteURL = URL(string: "https://s3-us-west-2.amazonaws.com/audiobucketfunsounds")?.appendingPathComponent("\(self.uniqueDeviceID)_\(fileName)") else {
                     DispatchQueue.main.async {
                         completion(UploadError.couldNotMakeRemoteURL)
                     }

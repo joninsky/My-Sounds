@@ -199,6 +199,7 @@
 				C326EFAB1E41AA6C008C88E7 /* Resources */,
 				5D983F7615231A22BF0083AE /* [CP] Embed Pods Frameworks */,
 				8DE5AC55CFC23CD6275F860C /* [CP] Copy Pods Resources */,
+				C326EFD81E4306EC008C88E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -367,6 +368,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		C326EFD81E4306EC008C88E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" cf03ba0eea07906edc7f9e101cf3a45c681c36af cc88e21bb2cb87aaccc04f6f5dee77a5c9cd7dc51f3b1ab6861ca4f06eb01be4";
 		};
 		CBBDB8310CD59F1358029783 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -540,7 +554,7 @@
 				DEVELOPMENT_TEAM = WEZXTSQ23M;
 				INFOPLIST_FILE = MySounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.MySounds;
+				PRODUCT_BUNDLE_IDENTIFIER = Me.offend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -554,7 +568,7 @@
 				DEVELOPMENT_TEAM = WEZXTSQ23M;
 				INFOPLIST_FILE = MySounds/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jonVogel.MySounds;
+				PRODUCT_BUNDLE_IDENTIFIER = Me.offend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
